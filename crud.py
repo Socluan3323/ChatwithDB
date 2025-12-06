@@ -77,13 +77,21 @@ def insert_list_products(list: List[Product]):
 
 def insert_one_productType(p : ProductType):
     with Session(engine) as session:
-        session.add(p)
-        session.commit()
+        if not session.get(ProductType,p.id):
+            session.add(p)
+            session.commit()
 
 def insert_list_productType(list: List[ProductType]):
     with Session(engine) as session:
-        session.add_all(list)
-        session.commit()
+        flag = False
+        for i in list:
+            if not session.get(ProductType,i.id):
+                session.add(i)
+                flag = True
+        if flag:
+            session.commit()
+        
+        
         
         
         
