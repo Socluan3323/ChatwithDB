@@ -74,6 +74,16 @@ def insert_list_products(list: List[Product]):
     with Session(engine) as session:
         session.add_all(list)
         session.commit()
+
+def insert_one_productType(p : ProductType):
+    with Session(engine) as session:
+        session.add(p)
+        session.commit()
+
+def insert_list_productType(list: List[ProductType]):
+    with Session(engine) as session:
+        session.add_all(list)
+        session.commit()
         
         
         
