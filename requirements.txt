@@ -1,0 +1,5 @@
+psycopg2-binary
+sqlalchemy
+google-generativeai
+python-dotenv
+PyYAML

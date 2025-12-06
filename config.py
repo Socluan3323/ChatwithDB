@@ -1,0 +1,1 @@
+FILE_PATH : str = 'newdata.txt'
