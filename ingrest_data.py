@@ -99,7 +99,7 @@ with open("newdata.txt","r") as f:
     data_rows = f.readlines()
     
     
-clean_data = [convert_list_to_dict(x) for x in data_rows if convert_list_to_dict(x)]
+clean_data = [convert_string_to_dict(x,',') for x in data_rows if convert_string_to_dict(x,',')]
 
 list_product_type_name = "\n".join(f"-{a[0]}: {a[1]}" for a in productype_id_to_name.items())
 complete_prompt = prompt_classify.format(list_pair_product_id_name = create_format_list_product_id_name(clean_data), list_product_type_name = list_product_type_name)
