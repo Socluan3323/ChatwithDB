@@ -1,6 +1,6 @@
 psycopg2-binary
 sqlalchemy
-google-generativeai
+google-genai
 python-dotenv
 PyYAML
 pandas
